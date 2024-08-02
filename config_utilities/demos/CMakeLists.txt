@@ -17,3 +17,12 @@ if(ENABLE_Eigen3 AND ENABLE_roscpp)
   install(TARGETS demo_ros
           RUNTIME DESTINATION ${CMAKE_INSTALL_LIBDIR}/${PROJECT_NAME})
 endif()
+
+if(ENABLE_Eigen3 AND ENABLE_rclcpp)
+  add_executable(demo_ros2 demo_ros2.cpp)
+  target_link_libraries(demo_ros2 ${PROJECT_NAME})
+
+  include(GNUInstallDirs)
+  install(TARGETS demo_ros2
+          RUNTIME DESTINATION ${CMAKE_INSTALL_LIBDIR}/${PROJECT_NAME})
+endif()

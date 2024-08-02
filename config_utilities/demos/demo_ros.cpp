@@ -186,6 +186,7 @@ int main(int argc, char** argv) {
   config = config::fromRos<demo::MyConfig>(nh);
   config::isValid(config, true);
   object = config::createFromROS<demo::Base>(nh);
+  
 
   ros::shutdown();
   return 0;
